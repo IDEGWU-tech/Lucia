@@ -1,13 +1,13 @@
 /* Data and state */
 const DATA = [
-  {id:1,name:'Signature Nail Close-Up',type:'service',price:15000,height:'medium',mediaType:'image',src:'images/lucia-01.jpeg',desc:'Glow-ready nail detail shot with soft shine and a polished finish.',color:'#ffd6e8'},
-  {id:2,name:'Custom Pink Nail Art',type:'service',price:12000,height:'tall',mediaType:'image',src:'images/lucia-02.jpeg',desc:'Hand-painted pink nails with floral accents and zebra edge art for a luxe look.',color:'#f8d6e5'},
-  {id:3,name:'Nail Glam Detail',type:'service',price:14000,height:'short',mediaType:'image',src:'images/lucia-03.jpeg',desc:'Eye-catching nail styling captured in rich light, highlighting color and curve.',color:'#dce9ff'},
-  {id:4,name:'Fresh Face & Nail Mood',type:'service',price:16000,height:'tall',mediaType:'image',src:'images/lucia-04.jpeg',desc:'Clean facial glow paired with stunning nail styling for a fresh beauty statement.',color:'#e8f7df'},
-  {id:5,name:'Motion Nail Reveal',type:'product',price:9500,height:'medium',mediaType:'video',src:'images/lucia-05.mp4',desc:'A moving view of the nail set in motion, showing shine and detail from each angle.',color:'#ffe9d9'},
-  {id:6,name:'Flutter Nail Clip',type:'product',price:13000,height:'short',mediaType:'video',src:'images/lucia-06.mp4',desc:'Short video clip highlighting vibrant nail movement and polish shine.',color:'#f5e9ff'},
-  {id:7,name:'Close-Up Nail Story',type:'product',price:14500,height:'tall',mediaType:'video',src:'images/lucia-07.mp4',desc:'Detailed moving close-up of nail length and art design for a premium finish.',color:'#e9f8f5'},
-  {id:8,name:'Nail + Lash Reel',type:'product',price:15500,height:'tall',mediaType:'video',src:'images/lucia-08.mp4',desc:'A polished reel combining nail art and lash styling to show the full beauty look.',color:'#fff0f0'}
+  {id:1,name:'Signature Nail Close-Up',type:'service',price:15000,height:'medium',mediaType:'image',src:'lucia-01.jpeg',desc:'Glow-ready nail detail shot with soft shine and a polished finish.',color:'#ffd6e8'},
+  {id:2,name:'Custom Pink Nail Art',type:'service',price:12000,height:'tall',mediaType:'image',src:'lucia-02.jpeg',desc:'Hand-painted pink nails with floral accents and zebra edge art for a luxe look.',color:'#f8d6e5'},
+  {id:3,name:'Nail Glam Detail',type:'service',price:14000,height:'short',mediaType:'image',src:'lucia-03.jpeg',desc:'Eye-catching nail styling captured in rich light, highlighting color and curve.',color:'#dce9ff'},
+  {id:4,name:'Fresh Face & Nail Mood',type:'service',price:16000,height:'tall',mediaType:'image',src:'lucia-04.jpeg',desc:'Clean facial glow paired with stunning nail styling for a fresh beauty statement.',color:'#e8f7df'},
+  {id:5,name:'Motion Nail Reveal',type:'product',price:9500,height:'medium',mediaType:'video',src:'lucia-05.mp4',desc:'A moving view of the nail set in motion, showing shine and detail from each angle.',color:'#ffe9d9'},
+  {id:6,name:'Flutter Nail Clip',type:'product',price:13000,height:'short',mediaType:'video',src:'lucia-06.mp4',desc:'Short video clip highlighting vibrant nail movement and polish shine.',color:'#f5e9ff'},
+  {id:7,name:'Close-Up Nail Story',type:'product',price:14500,height:'tall',mediaType:'video',src:'lucia-07.mp4',desc:'Detailed moving close-up of nail length and art design for a premium finish.',color:'#e9f8f5'},
+  {id:8,name:'Nail + Lash Reel',type:'product',price:15500,height:'tall',mediaType:'video',src:'lucia-08.mp4',desc:'A polished reel combining nail art and lash styling to show the full beauty look.',color:'#fff0f0'}
 ];
 
 let cart = [];
