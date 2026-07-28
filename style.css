@@ -1,0 +1,131 @@
+Pl:root{
+  --bg:#fafafa; --card:#fff; --accent:#d63384; --muted:#666; --glass: rgba(255,255,255,0.6);
+}
+*{box-sizing:border-box}
+body{font-family:Inter,Segoe UI,Helvetica,Arial,sans-serif;margin:0;background:#ffe9f2;color:#222}
+.topbar{background:#111;color:#fff;text-align:center;padding:6px 10px;font-size:14px}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 18px;background:linear-gradient(90deg,#111,#222);color:#fff;position:relative}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,#ff7ab6,#8f2be2);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+.brand-text{font-weight:600}
+.menu{list-style:none;display:flex;gap:14px;margin:0;padding:0;align-items:center;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
+.menu a,.btn-link{color:#fff;text-decoration:none;background:none;border:none;cursor:pointer}
+.cart-btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px;border-radius:8px;color:#fff;display:inline-flex;align-items:center;gap:8px}
+.badge{background:var(--accent);color:#fff;border-radius:999px;padding:2px 8px;font-size:12px;margin-left:-6px}
+
+.container{width:min(1200px,100%);max-width:1200px;margin:24px auto;padding:0 16px}
+.moodboard{columns:4;column-gap:16px}
+
+.card{display:inline-block;width:100%;background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(12,12,12,0.06);margin:0 0 16px;break-inside:avoid;transition:all 0.3s ease}
+.card[data-type="service"] .btn.add-cart,
+.card[data-type="service"] button[data-pay]{
+  display:none !important;
+}
+.card .placeholder{position:relative;height:220px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#f8f8f8}
+.card .placeholder img,
+.card .placeholder video{width:100%;height:100%;object-fit:contain;display:block}
+.card.short .placeholder{height:160px}
+.card.medium .placeholder{height:220px}
+.card.tall .placeholder{height:320px}
+.placeholder .overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0.28),transparent);opacity:0;transition:opacity 0.3s ease}
+.cart-item{display:flex;gap:10px;align-items:center;padding:8px;border-radius:8px}
+.cart-item .thumb{width:64px;height:64px;border-radius:8px;background:#f3f3f3;overflow:hidden}
+.saved-card{width:120px;border-radius:8px;overflow:hidden;background:#fff;padding:6px;border:1px solid #eee}
+.thumb-media{width:100%;height:100%;overflow:hidden}
+.thumb-media img,
+.thumb-media video{width:100%;height:100%;object-fit:cover;display:block}
+
+.meta{padding:12px;opacity:0;transform:translateY(8px);transition:all 0.3s ease}
+.meta h4{margin:0 0 6px;font-size:16px}
+.meta p{margin:0 0 8px;color:var(--muted);font-size:14px}
+.actions{display:flex;gap:8px}
+.btn{background:var(--accent);color:#fff;border:none;padding:8px 12px;border-radius:8px;cursor:pointer;transition:transform 0.2s ease,box-shadow 0.2s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn.secondary{background:#eee;color:#111}
+.btn.glow,
+button.save-board,
+button.book-now{
+  background:#ffd6e8 !important;
+  color:#111 !important;
+  border:1px solid rgba(214,51,132,0.35) !important;
+  box-shadow:0 0 24px rgba(214,51,132,0.35) !important;
+  padding:10px 14px;
+  font-weight:700;
+  border-radius:12px;
+  transition:transform 0.2s ease,box-shadow 0.2s ease,background 0.2s ease;
+}
+.btn.glow:hover,
+button.save-board:hover,
+button.book-now:hover{
+  background:#ffcee1 !important;
+  transform:translateY(-2px);
+  box-shadow:0 0 30px rgba(214,51,132,0.45) !important;
+}
+.btn.book-btn{background:#ffd6e8;color:#111;border:1px solid rgba(214,51,132,0.25);padding:12px 18px;font-size:15px;font-weight:700;border-radius:14px;box-shadow:0 10px 22px rgba(214,51,132,0.16);transition:transform 0.2s ease,box-shadow 0.2s ease,background 0.2s ease}
+.btn.book-btn:hover{background:#ffcee1;transform:translateY(-2px);box-shadow:0 14px 28px rgba(214,51,132,0.24)}
+.btn.book-whatsapp{background:#ffd6e8;color:#111 !important;border:1px solid rgba(214,51,132,0.25);padding:12px 18px;font-size:15px;font-weight:700;border-radius:14px;box-shadow:0 10px 22px rgba(214,51,132,0.16);transition:transform 0.2s ease,box-shadow 0.2s ease,background 0.2s ease}
+.btn.book-whatsapp:hover{background:#ffcee1;transform:translateY(-2px);box-shadow:0 14px 28px rgba(214,51,132,0.24)}
+#clear-board{background:#ffd6e8;color:#111;border:none;padding:11px 18px;font-size:14px;font-weight:700;border-radius:14px;box-shadow:0 12px 28px rgba(214,51,132,0.16);transition:transform 0.2s ease,box-shadow 0.2s ease}
+#clear-board:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(214,51,132,0.24)}
+
+.card:hover .overlay{opacity:1}
+.card:hover .meta{opacity:1;transform:none}
+
+/* Cart drawer */
+.cart-drawer{position:fixed;right:0;top:0;width:350px;height:100vh;background:#fff;box-shadow:-12px 0 40px rgba(0,0,0,0.12);transform:translateX(100%);transition:transform 0.35s ease;display:flex;flex-direction:column}
+.cart-drawer.open{transform:translateX(0)}
+.cart-header{display:flex;align-items:center;justify-content:space-between;padding:16px;border-bottom:1px solid #eee}
+.cart-items{padding:12px;flex:1;overflow:auto}
+.cart-item{display:flex;gap:10px;align-items:center;padding:8px;border-radius:8px}
+.cart-item .thumb{width:64px;height:64px;border-radius:8px;background:#f3f3f3}
+.cart-footer{padding:12px;border-top:1px solid #eee}
+.close-btn{background:none;border:none;font-size:22px;cursor:pointer}
+
+/* Modals */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.hidden{display:none}
+.modal{background:#fff;padding:18px;border-radius:10px;max-width:520px;width:100%;box-shadow:0 12px 40px rgba(2,2,2,0.18)}
+.modal.small{max-width:420px}
+.modal form label{display:block;margin:8px 0}
+.modal input[type=text],.modal input[type=tel]{width:100%;padding:8px;border:1px solid #ddd;border-radius:6px}
+.modal-actions{display:flex;justify-content:flex-end;margin-top:12px}
+.booking-preview{display:flex;gap:12px;margin-bottom:16px;align-items:center;border:1px solid #eee;padding:12px;border-radius:10px;background:#faf5fb}
+.booking-preview.hidden{display:none}
+.booking-preview .preview-media{width:88px;height:88px;overflow:hidden;border-radius:12px;background:#fff}
+.booking-preview .preview-media img,
+.booking-preview .preview-media video{width:100%;height:100%;object-fit:cover;display:block}
+.booking-preview .preview-copy{flex:1}
+.booking-preview h4{margin:0 0 6px;font-size:16px}
+.booking-preview p{margin:0 0 6px;color:#555;font-size:14px}
+
+.saved-card{width:120px;border-radius:8px;overflow:hidden;background:#fff;padding:6px;border:1px solid #eee}
+.saved-card-info{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:8px}
+.saved-card-info .saved-name{font-size:13px;line-height:1.2}
+.saved-card .remove-saved{padding:6px 8px;font-size:12px}
+
+.hidden-section{padding:12px 18px}
+.hidden-text{display:block}
+.saved-board{display:flex;flex-wrap:wrap;gap:10px}
+.saved-card{width:120px;border-radius:8px;overflow:hidden;background:#fff;padding:6px;border:1px solid #eee}
+.saved-card .thumb{height:90px;background:#f5f5f5;border-radius:6px}
+
+footer.site-footer{display:flex;justify-content:space-between;gap:20px;padding:20px 40px;background:var(--bg);margin-top:36px;border-top:1px solid rgba(0,0,0,0.04)}
+
+/* Footer column boxes to match page accent */
+.site-footer .contact-col,
+.site-footer .hours-col,
+.site-footer .services-col,
+.site-footer .portfolio-col{
+  background:linear-gradient(180deg, rgba(255,240,248,0.6), #fff);
+  border:1px solid rgba(214,51,132,0.10);
+  padding:16px;border-radius:10px;min-width:220px
+}
+
+/* Pink links in footer */
+.site-footer a{color:var(--accent);text-decoration:none;font-weight:600}
+
+
+@media (max-width:1200px){.moodboard{columns:3}}
+@media (max-width:1000px){.moodboard{columns:2}}
+@media (max-width:800px){.moodboard{columns:1}}
+@media (max-width:600px){.nav{flex-direction:column;align-items:flex-start;gap:12px}.menu{position:static;transform:none;flex-wrap:wrap;justify-content:flex-start;width:100%}.menu li{width:100%;text-align:left}.cart-wrap{width:100%;display:flex;justify-content:flex-end}.moodboard{columns:1}.footer.site-footer{flex-direction:column;gap:16px;padding:20px 16px}}

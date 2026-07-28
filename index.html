@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shoppable Mood Board — Nails & Lashes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="topbar">Opening Hours: Mon–Sat 9:00am – 7:00pm</div>
+    <nav class="nav">
+      <div class="brand">
+        <div class="logo">LN</div>
+        <div class="brand-text">Luxe Nails & Lashes</div>
+      </div>
+      <ul class="menu">
+        <li><a href="#services" id="services-link">Services</a></li>
+        <li><a href="#portfolio" id="portfolio-link">Portfolio</a></li>
+        <li><a href="#contact" id="contact-link">Contact</a></li>
+        <li><button id="board-btn" class="btn-link">My Board <span id="board-count" class="badge board-badge">0</span></button></li>
+      </ul>
+      <div class="cart-wrap">
+        <button id="cart-toggle" class="cart-btn" aria-label="Open cart">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 6h15l-1.5 9h-12L6 6z" stroke="#fff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span id="cart-count" class="badge">0</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="moodboard" id="moodboard">
+      <!-- Cards will be injected by script.js -->
+    </section>
+  </main>
+
+  <!-- Hidden Cart Drawer -->
+  <aside id="cart-drawer" class="cart-drawer">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button id="cart-close" class="close-btn">×</button>
+    </div>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">Total: <span id="cart-total">₦0</span></div>
+      <div class="cart-actions">
+        <button id="checkout-wa" class="btn book-whatsapp">Booking via WhatsApp</button>
+        <div class="pay-links">
+          <a id="pay-tiktok" class="link" target="_blank" rel="noopener">TikTok</a>
+          <a id="pay-instagram" class="link" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <!-- Booking Modal -->
+  <div id="booking-modal" class="modal-overlay hidden">
+    <div class="modal">
+      <button id="booking-close" class="close-btn">×</button>
+      <h3>Book Appointment</h3>
+      <div id="booking-preview" class="booking-preview hidden">
+        <div class="preview-media"></div>
+        <div class="preview-copy">
+          <h4 id="booking-item-name"></h4>
+          <p id="booking-item-price"></p>
+          <p id="booking-item-desc"></p>
+        </div>
+      </div>
+      <form id="booking-form">
+        <label>Name <input type="text" name="name" required></label>
+        <label>Phone <input type="tel" name="phone" required></label>
+        <label>Preferred Date & Time <input type="text" name="datetime" placeholder="e.g. 2026-07-20 14:00" required></label>
+        <input type="hidden" name="itemId">
+        <div class="modal-actions">
+          <button type="submit" class="btn book-btn">Book</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Board Modal -->
+  <div id="board-modal" class="modal-overlay hidden">
+    <div class="modal small">
+      <button id="board-close" class="close-btn">×</button>
+      <h3>My Board</h3>
+      <div id="saved-board" class="saved-board"></div>
+      <div class="modal-actions">
+        <button id="clear-board" class="btn">Clear Board</button>
+      </div>
+    </div>
+  </div>
+
+  <footer id="contact" class="site-footer">
+    <div class="contact-col">
+      <h4>Contact</h4>
+      <p>Phone / WhatsApp: <a href="tel:+2348081043697">+234 808 104 3697</a></p>
+      <p>Instagram: <a href="https://instagram.com/LuciaOmaz" target="_blank" rel="noopener">@LuciaOmaz</a></p>
+      <p>TikTok: <a href="https://tiktok.com/@LuciaOmanjie" target="_blank" rel="noopener">@LuciaOmanjie</a></p>
+    </div>
+
+    <div class="services-col">
+      <h4>Services</h4>
+      <p id="services-text" class="hidden-text">Nail tech (manicures, press-ons), Lash tech (classic, volume sets), Brow shaping, Tinting, and Aftercare guidance.</p>
+    </div>
+
+    <div class="portfolio-col">
+      <h4>Portfolio</h4>
+      <p id="portfolio-text" class="hidden-text">Highly detailed, clean finishes; custom art; long-lasting press-ons; lash lifts and extensions tailored per client.</p>
+    </div>
+
+    <div class="hours-col">
+      <h4>Opening Hours</h4>
+      <p>Mon–Sat 9:00am – 7:00pm</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
